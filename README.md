@@ -8,3 +8,5 @@ python merge_to_pkl.py
 python visualize_root_path.py
 
 python inspect_data.py
+
+python prepare_gmr_data.py - 무적
