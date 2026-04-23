@@ -13,4 +13,6 @@ python prepare_gmr_data.py - 무적
 
 
 (gmr) namtg002@riro:~/workspace_robotics/GMR$ python scripts/smplx_to_robot.py   --smplx_file ~/workspace_robotics/data/dance_gmr_input_fixed.npz   --robot unitree_g1   --save_path ~/workspace_robotics/data/g1_retargeted_dance.pkl
+
+
 xrobotoolkit_sdk not found, skip for now. If you do not use XRobotStreamer, it's fine.
