@@ -1,7 +1,8 @@
 # pico-vr-retargeting
 
-python gear_sonic/scripts/pico_manager_thread_server.py     --vis_smpl     --vis_vr3pt     --waist_tracking     --no_g1 --record_dir ~/workspace_robotics/data/test_dance
+-------------data Collect------------
 
+python gear_sonic/scripts/pico_manager_thread_server.py     --vis_smpl     --vis_vr3pt     --waist_tracking     --no_g1 --record_dir ~/workspace_robotics/data/test_dance
 
 python merge_to_pkl.py
 
@@ -9,6 +10,8 @@ python visualize_root_path.py
 
 python inspect_data.py
 
+
+--------------GMR-----------
 python prepare_gmr_data.py - 무적
 
 
@@ -16,3 +19,17 @@ python prepare_gmr_data.py - 무적
 
 
 xrobotoolkit_sdk not found, skip for now. If you do not use XRobotStreamer, it's fine.
+
+
+----------Phuma----------
+
+(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ python ~/workspace_robotics/prepare_phuma_smplx.py
+
+(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ python src/curation/preprocess_smplx.py     --project_dir .     --human_pose_file dance_smplx_format     --foot_contact_threshold 0.02
+
+
+
+(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ PYTHONPATH=src python src/retarget/motion_adaptation.py     --project_dir .     --human_pose_file dance_smplx_format_chunk_0000     --robot_name g1     --visualize 0
+
+
+(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ python ~/workspace_robotics/view_continuous_g1.py
