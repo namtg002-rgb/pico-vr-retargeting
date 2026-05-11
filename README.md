@@ -23,5 +23,4 @@ python batch_phuma_retarget_recordings.py ~/workspace_robotics/data/(폴더명) 
   --device cuda:0
 
 python view_continuous_g1.py \
-  ~/workspace_robotics/data/(폴더명)/retargeted/phuma/recording_20260511_153012_000000_g1_phuma_chunk_0000.npy
-
+  ~/workspace_robotics/data/(폴더명)/retargeted/phuma/(파일명)
