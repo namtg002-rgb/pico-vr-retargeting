@@ -2,34 +2,26 @@
 
 -------------data Collect------------
 
-python gear_sonic/scripts/pico_manager_thread_server.py     --vis_smpl     --vis_vr3pt     --waist_tracking     --no_g1 --record_dir ~/workspace_robotics/data/test_dance
-
-python merge_to_pkl.py
-
-python visualize_root_path.py
-
-python inspect_data.py
-
+python gear_sonic/scripts/pico_manager_thread_server.py     --vis_smpl     --vis_vr3pt     --waist_tracking     --no_g1 --record_dir ~/workspace_robotics/data/(폴더명)
 
 --------------GMR-----------
 
-python prepare_gmr_data.py - 무적
-
-
-(gmr) namtg002@riro:~/workspace_robotics/GMR$ python scripts/smplx_to_robot.py   --smplx_file ~/workspace_robotics/data/dance_gmr_input_fixed.npz   --robot unitree_g1   --save_path ~/workspace_robotics/data/g1_retargeted_dance.pkl
-
-
-xrobotoolkit_sdk not found, skip for now. If you do not use XRobotStreamer, it's fine.
-
+python batch_retarget_recordings.py ~/workspace_robotics/data/(폴더명) \
+  --output_dir ~/workspace_robotics/data/(폴더명)/retargeted_GMR \
+  --robot unitree_g1 \
+  --rate_limit
 
 ----------Phuma----------
 
-(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ python ~/workspace_robotics/prepare_phuma_smplx.py
+conda activate phuma
+cd ~/workspace_robotics
 
-(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ python src/curation/preprocess_smplx.py     --project_dir .     --human_pose_file dance_smplx_format     --foot_contact_threshold 0.02
+python batch_phuma_retarget_recordings.py ~/workspace_robotics/data/(폴더명) \
+  --output_dir ~/workspace_robotics/data/(폴더명)/retargeted/phuma \
+  --robot_name g1 \
+  --foot_contact_threshold 0.02 \
+  --device cuda:0
 
+python view_continuous_g1.py \
+  ~/workspace_robotics/data/(폴더명)/retargeted/phuma/recording_20260511_153012_000000_g1_phuma_chunk_0000.npy
 
-(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ PYTHONPATH=src python src/retarget/motion_adaptation.py     --project_dir .     --human_pose_file dance_smplx_format_chunk_0000     --robot_name g1     --visualize 0
-
-
-(phuma) namtg002@riro:~/workspace_robotics/PHUMA$ python ~/workspace_robotics/view_continuous_g1.py
