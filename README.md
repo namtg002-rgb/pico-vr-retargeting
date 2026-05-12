@@ -32,5 +32,10 @@ cd ~/workspace_robotics
 
 python batch_phuma_retarget_recordings.py ~/workspace_robotics/data/(폴더명)   --output_dir ~/workspace_robotics/data/(폴더명)/retargeted/phuma   --robot_name g1   --foot_contact_threshold 0.02   --device cuda:0
 
-python view_continuous_g1.py \
-  ~/workspace_robotics/data/(폴더명)/retargeted/phuma/(파일명)
+
+python batch_phuma_retarget_recordings.py ~/workspace_robotics/data/(폴더명)   --output_dir ~/workspace_robotics/data/(폴더명)/retargeted/phuma   --robot_name g1   --foot_contact_threshold 0.02   --device cpu
+
+
+python view_continuous_g1.py ~/workspace_robotics/data/(폴더명)/retargeted/phuma
+
+[ 와 ] 로 다음 액션 확인 가능
