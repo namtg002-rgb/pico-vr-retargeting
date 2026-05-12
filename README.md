@@ -22,6 +22,8 @@ python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion
 
 python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion_folder ~/workspace_robotics/data/test0512/retargeted_GMR
 
+[ 와 ] 로 다음 액션 확인 가능
+
 
 ----------Phuma----------
 
