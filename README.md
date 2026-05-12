@@ -15,6 +15,14 @@ conda activate gmr
 
 python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion_folder ~/workspace_robotics/data/(폴더명)/retargeted_GMR
 
+cd ~/workspace_robotics/GMR
+conda activate gmr
+
+python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion_folder ~/workspace_robotics/data/(폴더명)/retargeted_GMR
+
+python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion_folder ~/workspace_robotics/data/test0512/retargeted_GMR
+
+
 ----------Phuma----------
 
 conda activate phuma
