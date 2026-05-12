@@ -6,10 +6,8 @@ python gear_sonic/scripts/pico_manager_thread_server.py     --vis_smpl     --vis
 
 --------------GMR-----------
 
-python batch_retarget_recordings.py ~/workspace_robotics/data/(폴더명) \
-  --output_dir ~/workspace_robotics/data/(폴더명)/retargeted_GMR \
-  --robot unitree_g1 \
-  --rate_limit
+python batch_retarget_recordings.py ~/workspace_robotics/data/(폴더명) --output_dir ~/workspace_robotics/data/(폴더명)/retargeted_GMR --robot unitree_g1 --rate_limit
+
 
 ----------Phuma----------
 
