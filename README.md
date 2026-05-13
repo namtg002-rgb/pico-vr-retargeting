@@ -12,6 +12,12 @@ python gear_sonic/scripts/pico_manager_thread_server.py     --vis_smpl     --vis
 
 python batch_retarget_recordings.py ~/workspace_robotics/data/(폴더명) --output_dir ~/workspace_robotics/data/(폴더명)/retargeted_GMR --robot unitree_g1 --rate_limit
 
+conda activate gmr
+cd ~/workspace_robotics
+
+python batch_retarget_recordings.py   ~/workspace_robotics/data/(폴더명)   --output_dir ~/workspace_robotics/data/(폴더명)/retargeted_GMR   --robot unitree_g1   --fps 30   --offset_to_ground   --overwrite
+
+
 (결과 확인)
 
 cd ~/workspace_robotics/GMR
@@ -29,8 +35,6 @@ conda activate gmr
 python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion_folder ~/workspace_robotics/data/(폴더명)/retargeted_GMR
 
 
-
-python scripts/vis_robot_motion_dataset.py   --robot unitree_g1   --robot_motion_folder ~/workspace_robotics/data/test0512/retargeted_GMR
 
 
 
